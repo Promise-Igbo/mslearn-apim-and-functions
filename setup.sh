@@ -7,7 +7,7 @@ export ORDER_FUNCTION_NAME=OrderFunction$(openssl rand -hex 5)
 export CURRENT_DIR=$(pwd)
 
 # Get the resource group and location
-export RESOURCE_GROUP=$(az group list --query "[0].name" -o tsv)
+export RESOURCE_GROUP="apimtrainingrg"
 export LOCATION=$(az group show --name $RESOURCE_GROUP -o json| jq -r ".location")
 printf "\nThe resource group is called $RESOURCE_GROUP and is located in $LOCATION\n"
 
